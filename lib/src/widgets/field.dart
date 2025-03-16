@@ -400,6 +400,7 @@ class _DateTimeFieldState extends State<DateTimeField> {
   Future<void> _handleTap() async {
     _isSelecting = true;
     _focusNode?.requestFocus();
+    await Future.delayed(const Duration(milliseconds: 10));
     widget.onTap?.call();
 
     final DateTime? newDateTime = await showAdaptiveDateTimePicker(
